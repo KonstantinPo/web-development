@@ -1,25 +1,45 @@
 <?php
 header("Content-Type: text/plain");
 $param = "identifier";
-$value = Get($param);
-if ($value === null) {
-	echo "Параметр ".$param." не найден";
-} else {
-	echo IsSr3Identifier($value);
+if (($value = getParameter($param)) === null)
+{
+	echo "Параметр " . $param . " не найден";
+} 
+else
+{
+	$errorMessage = "";
+	if (validateSr3Identifier($value, $errorMessage))
+	{
+		echo "Yes.";
+	}
+	else
+	{
+		echo $errorMessage;
+	}
 }
 
-function Get(string $key) : ?string {
-	return array_key_exists($key, $_GET) ? (string)$_GET[$key] : null;
-}
-
-function IsSr3Identifier(string $identifier) : string {
-	for ($i = 0; $i < strlen($identifier); ++$i) {
+function validateSr3Identifier(string $identifier, string& $errorMessage) : bool
+{
+	for ($i = 0; $i < strlen($identifier); ++$i)
+	{
 		$ch = $identifier[$i];
-		if ($i == 0 && ctype_digit($ch))
-			return "No. В идентификаторе первый символ цифра";
+		if ($i === 0 && ctype_digit($ch))
+		{
+			$errorMessage = "No. В идентификаторе первый символ цифра";
+			return false;
+		}
 		$ch = strtolower($ch); 
 		if (strpbrk($ch, "abcdefghijklmnopqrstuvwxwz0123456789") === false)
-			return "No. В идентификаторе символ на позиции ".$i. " не является буквой или цифрой";
+		{
+			$errorMessage = "No. В идентификаторе символ на позиции " . $i . " не является буквой или цифрой";
+			return false;
+		}
 	}
-	return "Yes.";
+	$errorMessage = "dfsfd";
+	return true;
+}
+
+function getParameter(string $key) : ?string
+{
+	return isset($_GET[$key]) ? (string)$_GET[$key] : null;
 }

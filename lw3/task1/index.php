@@ -1,28 +1,36 @@
 <?php
 header("Content-Type: text/plain");
-$value = Get("name");
-if ($value === null) {
+if (($value = getParameter("name")) === null)
+{
 	echo "Параметр name не найден";
-} else {
-	
-	echo "Параметр name без пробелов:".RemoveExtraBlanks($value);
+}
+else
+{	
+	echo "Параметр name без пробелов:" . removeExtraBlanks($value);
 }
 
-function RemoveExtraBlanks(string $string) : string {
+function removeExtraBlanks(string $string) : string 
+{
 	$string = trim($string);
 	$res = "";
 	$addBlank = true;
-	foreach (str_split($string) as $ch) {
-		if ($ch != " ") {
+	foreach (str_split($string) as $ch)
+	{
+		if($ch !== " ")
+		{
 			$res .= $ch;
 			$addBlank = true;
-		} else if ($addBlank) {
+		} 
+		else if ($addBlank)
+		{
 			$res .= $ch;
 			$addBlank = false;
 		}
 	}
 	return $res;
 }
-function Get(string $key) : ?string {
-	return array_key_exists($key, $_GET) ? (string)$_GET[$key] : null;
+
+function getParameter(string $key) : ?string
+{
+	return isset($_GET[$key]) ? (string)$_GET[$key] : null;
 }
