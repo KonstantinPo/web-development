@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: text/plain");
-$path = "data";
+$dirPath = "data";
 $mail = getParameter("email");
 if ($mail === null) 
 {
@@ -22,11 +22,11 @@ else
 			echo "Параметр возраст задан неверно";
 			return;
 		}
-		if (!file_exists($path))
+		if (!file_exists($dirPath))
 		{
-			mkdir($path);
+			mkdir($dirPath);
 		}
-		SaveEntry($path, $mail, (string)$firstName, (string)$lastName, (string)$age);
+		SaveEntry($dirPath, $mail, (string)$firstName, (string)$lastName, (string)$age);
 		echo "Данные:" . PHP_EOL;
 		echo "email = " . $mail . PHP_EOL;
 		echo "Имя = " . $firstName . PHP_EOL;
@@ -36,12 +36,12 @@ else
 	}
 }
 
-function getParameter(string $key) : ?string
+function getParameter(string $key): ?string
 {
 	return isset($_GET[$key]) ? (string)$_GET[$key] : null;
 }
 
-function SaveEntry(string $path, string $mail, string $firstName, string $lastName, string $age) 
+function SaveEntry(string $dirPath, string $mail, string $firstName, string $lastName, string $age) 
 {
-	file_put_contents($path . "/" . $mail . ".txt", "first_name=" . $firstName . PHP_EOL . "last_name=" . $lastName . PHP_EOL . "age=" . $age);
+	file_put_contents($dirPath . "/" . $mail . ".txt", "first_name=" . $firstName . PHP_EOL . "last_name=" . $lastName . PHP_EOL . "age=" . $age);
 }

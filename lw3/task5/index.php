@@ -1,6 +1,6 @@
 <?php
 header("Content-Type: text/plain");
-$path = "../task4/data";
+$dirPath = "../task4/data";
 $mail = getParameter("email");
 if ($mail === null) 
 {
@@ -18,7 +18,7 @@ else
 		$lastName = "";
 		$age = "";
 		$errorMessage = "";
-		if (!GetEntry($path, $mail, $firstName, $lastName, $age, $errorMessage))
+		if (!GetEntry($dirPath, $mail, $firstName, $lastName, $age, $errorMessage))
 		{
 			echo $errorMessage;
 		}
@@ -34,14 +34,14 @@ else
 	}
 }
 
-function getParameter(string $key) : ?string
+function getParameter(string $key): ?string
 {
 	return isset($_GET[$key]) ? (string)$_GET[$key] : null;
 }
 
-function GetEntry(string $path, string $mail, string& $firstName, string& $lastName, string& $age, string& $errorMessage) : bool
+function GetEntry(string $dirPath, string $mail, string& $firstName, string& $lastName, string& $age, string& $errorMessage): bool
 {
-	$fileName = "$path/$mail.txt";
+	$fileName = "$dirPath/$mail.txt";
 	if (!file_exists($fileName))
 	{
 		$errorMessage = "Не найден файл: $fileName" . PHP_EOL;

@@ -1,12 +1,12 @@
 <?php
 header("Content-Type: text/plain");
-if (($value = getParameter("name")) === null)
-{
-	echo "Параметр name не найден";
-}
-else
+if (($value = getParameter("name")) !== null)
 {	
 	echo "Параметр name без пробелов:" . removeExtraBlanks($value);
+}
+else
+{
+	echo "Параметр name не найден";
 }
 
 function removeExtraBlanks(string $string) : string 

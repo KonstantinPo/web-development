@@ -11,7 +11,7 @@ else
 	GetPasswordStrength($value);
 }
 
-function GetPasswordStrength(string $password) : void
+function GetPasswordStrength(string $password): void
 {
 	$reliability = 0;
 	$len = strlen($password);
@@ -47,12 +47,12 @@ function GetPasswordStrength(string $password) : void
 	}
 	if (strlen($str) > 0)
 	{
-		echo "В строке встречаются следующие символы больше 2-х раз:" . PHP_EOL.$str;
+		echo "В строке встречаются следующие символы больше 2-х раз:" . PHP_EOL . $str;
 	}
 	echo "Общая надежность: " . $reliability; 
 }
 
-function getCountOfDigitsInString(string $string) : int
+function getCountOfDigitsInString(string $string): int
 {
 	$res = 0;
 	foreach (str_split($string) as $ch)
@@ -65,7 +65,7 @@ function getCountOfDigitsInString(string $string) : int
 	return $res;
 }
 
-function getCountUpperCaseSymbolsInString(string $string) : int
+function getCountUpperCaseSymbolsInString(string $string): int
 {
 	$res = 0;
 	foreach (str_split($string) as $ch)
@@ -78,7 +78,7 @@ function getCountUpperCaseSymbolsInString(string $string) : int
 	return $res;
 }
 
-function getCountLowerCaseSymbolsInString(string $string) : int
+function getCountLowerCaseSymbolsInString(string $string): int
 {
 	$res = 0;
 	foreach (str_split($string) as $ch)
@@ -91,7 +91,7 @@ function getCountLowerCaseSymbolsInString(string $string) : int
 	return $res;
 }
 
-function getParameter(string $key) : ?string
+function getParameter(string $key): ?string
 {
 	return isset($_GET[$key]) ? (string)$_GET[$key] : null;
 }

@@ -35,7 +35,6 @@ function validateSr3Identifier(string $identifier, string& $errorMessage) : bool
 			return false;
 		}
 	}
-	$errorMessage = "dfsfd";
 	return true;
 }
 
