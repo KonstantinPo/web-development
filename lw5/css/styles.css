@@ -1,0 +1,143 @@
+.body
+{
+    padding: 100px 0px 0px 480px;
+}
+
+.header
+{
+    margin-bottom: 50px;
+}
+.header__image
+{
+    width: 330px;
+    height: 350px;
+    overflow: hidden;
+    float: left;
+    margin-right: 50px;
+    /* margin-bottom: 50px; */
+}
+.header__image_photo
+{
+    position: relative;
+    top: -63px;
+    left: -174px;
+    alt: "Фотография";
+    content: url("../img/photo.png");
+}
+
+.quote
+{
+    /* display: block; */
+    padding: 50px 0px 0px 50px;
+}
+
+.quote__text
+{
+     margin: -50px 0px 0px 390px;
+}
+
+.quote_image
+{
+    height: 80px;
+    alt: "кавычки";
+    content: url("../img/quotes.png");
+}
+
+.quote__text__citation
+{
+    color: #848484;
+    font-size: 28px;
+    line-height: 42px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.quote__text__author
+{
+    font-size: 16px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 600;
+    font-family: "Open Sans";
+    margin: -24px 0px 0px 0px
+}
+
+.favorites
+{
+    clear: both;
+    float: left;
+    margin-right: 50px;
+}
+
+.favorites__header
+{
+    font-size: 24px;
+    line-height: 32px;
+    color: #15a98c;
+    font-weight: bold;
+    font-family: "Open Sans";
+}
+
+.favorites__list
+{
+    padding: 0px 0px 0px 20px;
+    width: 330px;
+    font-size: 19px;
+    line-height: 36px;
+    color: #555555;
+    font-family: "Georgia";
+}
+
+.Page-Content_Header
+{
+    font-size: 48px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 700;
+    font-family: "Open Sans";
+}
+
+.line
+{
+    width: 60px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #45c3aa;
+    display: inline-block;
+}
+
+.Page-Content
+{
+    display: inline-block;
+}
+
+ .Page-Content_Text
+{
+    font-size: 19px;
+    line-height: 32px;
+    color: #555555;
+    font-family: "Georgia";
+} 
+
+.Page-Content_SecondHeader
+{
+    font-size: 36px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.Page-Content_Link
+{
+    font-size: 19px;
+    line-height: 32px;
+    color: #15a98b;
+    font-family: "Georgia"; 
+}
+
+.Page-Content_Link::after
+{
+    color: #15a98b;
+    content: "→";
+}
