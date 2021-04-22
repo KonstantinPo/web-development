@@ -6,12 +6,19 @@
         <title>Калькулятор</title>
     </head>
     <body>
+        <label>Введите Число</label>
+        <form>
+            <input type="input" id="numbersString"/>
+            <button type="button" onclick="isPrimeNumber();">Проверить</button>
+        </form>
+        <p id="primeNumberResult"></p>
         <label>Введите выражение в польской нотации</label>
-        <form name="expression">
+        <form>
             <input type="input" id="polishNotationString"/>
             <button type="button" onclick="calc();">Посчитать</button>
         </form>
-        <p id="result"></p>
+        <p id="polishNotationResult"></p>
         <script type="application/javascript" src="./scripts/calc.js"></script>
+        <script type="application/javascript" src="./scripts/isPrimeNumber.js"></script>
     </body>
 </html>
