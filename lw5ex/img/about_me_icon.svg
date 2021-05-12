@@ -1,0 +1,12 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" width="14" height="16">
+	<title>Top menu</title>
+	<defs>
+		<image  width="14" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAAXNSR0IB2cksfwAAALRQTFRFAAAASUlJRUVFRUVFRkZGR0dHRUVFRkZGRkZGRkZGRUVFRkZGRUVFRkZGSEhIRkZGRUVFRUVFRUVFSEhIRERESkpKRkZGVVVVQ0NDRkZGSEhIR0dHSEhIR0dHRkZGR0dHQ0NDRkZGRkZGRkZGR0dHRkZGRkZGSEhIRkZGS0tLRkZGRkZGVVVVSEhIRkZGQEBASkpKRUVFRUVFRkZGR0dHRkZGRkZGRkZGRkZGRkZGRkZGR0dHauglBQAAADx0Uk5TABOY2vDBUR7n/4S5//01D/6JM7KJJYYENOFXmcFjvXEa5eiSrfnxGJwX+O8IMDcWJqJIlbzk8+nf1a5TM4Ui0AAAAIdJREFUeJxNjdUWwkAMBS+0QFOCO8WLu+v//xfJdjnsPGVyI4CQSnt+JgtLLiAltJonVi0UjZXKlFAxWjW1DNScVLT+2yVnF42ANWy2jLU73cjze/3BUG00JprE4XRG84XokpNDQgys1vartDZb7MhhjwMz21miI3D6h5GePl+ut/vj+Xp/gC+w5gsjTpTroQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Top menu">
+		<use id="about_me_icon" href="#img1" x="0" y="0" />
+	</g>
+</svg>
