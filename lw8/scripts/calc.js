@@ -48,7 +48,7 @@ function tryExecute(operator, operand1, operand2) {
             res = add(operand1, operand2);
             break;
         case '-':
-            res = Sub(operand1, operand2);
+            res = sub(operand1, operand2);
             break;
         case '*':
             res = mul(operand1, operand2);
